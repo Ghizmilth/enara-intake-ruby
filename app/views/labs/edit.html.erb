@@ -1,0 +1,91 @@
+<h1>Editing Lab</h1>
+
+
+<%= form_with(model: @lab, local: true) do |form| %>
+  <% if @lab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lab.errors.count, "error") %> prohibited this lab from being saved:</h2>
+
+      <ul>
+      <% @lab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :chart_id, id: :form_titles %>
+    <%= form.text_field :chart_id, id: :new_lab_form %>
+    <!-- <%= form.text_field :chart_id, id: :lab_chart_id %> -->
+  </div>
+
+  <div class="field">
+    <%= form.label :cholest_SerPI_mCnc, id: :form_titles %>
+    <%= form.text_field :cholest_SerPI_mCnc, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :HDLc_SerPI_mCnc, id: :form_titles %>
+    <%= form.text_field :HDLc_SerPI_mCnc, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Trigl_SerPI_mCnc, id: :form_titles %>
+    <%= form.text_field :Trigl_SerPI_mCnc, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LDLc_SerPI_Calc_mCnc, id: :form_titles %>
+    <%= form.text_field :LDLc_SerPI_Calc_mCnc, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Glucose_SerPI_mCnc, id: :form_titles %>
+    <%= form.text_field :Glucose_SerPI_mCnc, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hgb_A1c_MFr_Bld, id: :form_titles %>
+    <%= form.text_field :Hgb_A1c_MFr_Bld, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :VLDL, id: :form_titles %>
+    <%= form.text_field :VLDL, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :HSCRP, id: :form_titles %>
+    <%= form.text_field :HSCRP, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :received_date, id: :form_titles %>
+    <%= form.date_select :received_date, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sourc, id: :form_titles %>
+    <%= form.text_field :source, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reported_date, id: :form_titles %>
+    <%= form.date_select :reported_date, id: :new_lab_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes, id: :form_titles %>
+    <%= form.text_area :notes, class: :notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Show', @lab %> |
+<%= link_to 'Back', labs_path %>

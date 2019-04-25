@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Labs</h1>
+
+<%= form_tag(labs_path, :method => 'get') do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search table', name: nil %>
+</p>
+<% end %>
+<h4>Table can be searched by CHART_ID or RECEIVED DATE in the YYYY-MM-DD format</h4>
+<hr>
+<br />
+<%= link_to 'CREATE NEW LAB', new_lab_path, class: "newLab" %>
+
+<br />
+<br />
+
+<table id="labs" class="labsTable" border=1>
+  <thead>
+    <tr>
+      <th><%= sortable "chart_id", "Chart" %></th>
+      <th>Cholest serpi mcnc</th>
+      <th>Hdlc serpi mcnc</th>
+      <th>Trigl serpi mcnc</th>
+      <th>Ldlc serpi calc mcnc</th>
+      <th>Glucose serpi mcnc</th>
+      <th>Hgb a1c mfr bld</th>
+      <th>Vldl</th>
+      <th>Hscrp</th>
+      <th><%= sortable "received_date", "Received Date" %></th>
+      <th>Source</th>
+      <th>Reported date</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labs.each do |lab| %>
+      <tr>
+        <td><%= lab.chart_id %></td>
+        <td><%= lab.cholest_SerPI_mCnc %></td>
+        <td><%= lab.HDLc_SerPI_mCnc %></td>
+        <td><%= lab.Trigl_SerPI_mCnc %></td>
+        <td><%= lab.LDLc_SerPI_Calc_mCnc %></td>
+        <td><%= lab.Glucose_SerPI_mCnc %></td>
+        <td><%= lab.Hgb_A1c_MFr_Bld %></td>
+        <td><%= lab.VLDL %></td>
+        <td><%= lab.HSCRP %></td>
+        <td><%= lab.received_date %></td>
+        <td><%= lab.source %></td>
+        <td><%= lab.reported_date %></td>
+        <td><%= lab.notes %></td>
+        <td><%= link_to 'Show', lab,  class: "show" %></td>
+        <td><%= link_to 'Edit', edit_lab_path(lab), class: "edit" %></td>
+        <td><%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' },  class: "destroy" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @labs %>
+
+<hr>
+
+<h2>Import Labs From EXCEL File</h2>
+<%= form_tag import_from_excel_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

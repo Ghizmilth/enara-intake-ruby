@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chart:</strong>
+  <%= @lab.chart_id %>
+</p>
+
+<p>
+  <strong>Cholest serpi mcnc:</strong>
+  <%= @lab.cholest_SerPI_mCnc %>
+</p>
+
+<p>
+  <strong>Hdlc serpi mcnc:</strong>
+  <%= @lab.HDLc_SerPI_mCnc %>
+</p>
+
+<p>
+  <strong>Trigl serpi mcnc:</strong>
+  <%= @lab.Trigl_SerPI_mCnc %>
+</p>
+
+<p>
+  <strong>Ldlc serpi calc mcnc:</strong>
+  <%= @lab.LDLc_SerPI_Calc_mCnc %>
+</p>
+
+<p>
+  <strong>Glucose serpi mcnc:</strong>
+  <%= @lab.Glucose_SerPI_mCnc %>
+</p>
+
+<p>
+  <strong>Hgb a1c mfr bld:</strong>
+  <%= @lab.Hgb_A1c_MFr_Bld %>
+</p>
+
+<p>
+  <strong>Vldl:</strong>
+  <%= @lab.VLDL %>
+</p>
+
+<p>
+  <strong>Hscrp:</strong>
+  <%= @lab.HSCRP %>
+</p>
+
+<p>
+  <strong>Received date:</strong>
+  <%= @lab.received_date %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @lab.source %>
+</p>
+
+<p>
+  <strong>Reported date:</strong>
+  <%= @lab.reported_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @lab.notes %>
+</p>
+
+<%= link_to 'Edit', edit_lab_path(@lab) %> |
+<%= link_to 'Back', labs_path %>

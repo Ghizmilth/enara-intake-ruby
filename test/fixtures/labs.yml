@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chart_id: MyString
+  cholest_SerPI_mCnc: 1.5
+  HDLc_SerPI_mCnc: 1.5
+  Trigl_SerPI_mCnc: 1.5
+  LDLc_SerPI_Calc_mCnc: 1.5
+  Glucose_SerPI_mCnc: 1.5
+  Hgb_A1c_MFr_Bld: 1.5
+  VLDL: 1.5
+  HSCRP: 1.5
+  received_date: 2018-05-17
+  source: MyString
+  reported_date: 2018-05-17
+  notes: MyText
+
+two:
+  chart_id: MyString
+  cholest_SerPI_mCnc: 1.5
+  HDLc_SerPI_mCnc: 1.5
+  Trigl_SerPI_mCnc: 1.5
+  LDLc_SerPI_Calc_mCnc: 1.5
+  Glucose_SerPI_mCnc: 1.5
+  Hgb_A1c_MFr_Bld: 1.5
+  VLDL: 1.5
+  HSCRP: 1.5
+  received_date: 2018-05-17
+  source: MyString
+  reported_date: 2018-05-17
+  notes: MyText
